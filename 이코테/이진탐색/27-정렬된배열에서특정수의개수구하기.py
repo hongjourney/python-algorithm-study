@@ -59,9 +59,9 @@ def first(array, target, start, end):
     if (mid==0 or array[mid-1] < target) and array[mid] == target:
         return mid
     elif array[mid] < target:
-        first(array, target, mid+1, end)
+        return first(array, target, mid+1, end)
     else:
-        first(array, target, start, mid-1)
+        return first(array, target, start, mid-1)
 
 # 마지막 위치를 찾는 이진 탐색 메서드
 def last(array, target, start, end):
@@ -72,9 +72,9 @@ def last(array, target, start, end):
     if (mid==end or array[mid+1] > target) and array[mid] == target:
         return mid
     elif array[mid] < target:
-        last(array, target, mid+1, end)
+        return last(array, target, mid+1, end)
     else:
-        last(array, target, start, mid-1)
+        return last(array, target, start, mid-1)
 
 n, x = map(int, input().split())
 array = list(map(int, input().split()))
