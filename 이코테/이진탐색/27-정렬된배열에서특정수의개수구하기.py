@@ -4,8 +4,8 @@ array = list(map(int, input().split()))
 #### bisect 라이브러리 이용했던 코드
 # from bisect import bisect_left, bisect_right
 # if x in array:
-#     left_index = bisect_left(array, x, x)
-#     right_index = bisect_right(array, x, x)
+#     left_index = bisect_left(array, x)
+#     right_index = bisect_right(array, x)
 #     result = right_index-left_index
 # else:
 #     result = -1
@@ -15,8 +15,8 @@ array = list(map(int, input().split()))
 start = 0
 end = len(array)
 target_index = -1
-while start<end:
-    mid = (start+end)//2
+while start < end:
+    mid = (start + end) // 2
     if array[mid] == x:
         target_index = mid
         break
@@ -31,7 +31,7 @@ if target_index != -1:
         right_index += 1
     while array[left_index] == x:
         left_index -= 1
-    print(right_index-left_index-1) 
+    print(right_index - left_index - 1)
 else:
     print(-1)
 
